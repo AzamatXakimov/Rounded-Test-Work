@@ -27,7 +27,7 @@ export const Hero = () => {
                                 <HeroTitle>
                                     Учебный центр <HeroTitleRedText>Виноградарства!</HeroTitleRedText>
                                 </HeroTitle>
-                                <HeroLink to="sell">купить</HeroLink>
+                                <HeroLink to="/course-single">купить</HeroLink>
                             </HeroTitleBox>
 
                             <HeroInfoBox>
@@ -53,7 +53,7 @@ export const Hero = () => {
                                 <HeroTitle>
                                     Учебный центр <HeroTitleRedText>Виноградарства!</HeroTitleRedText>
                                 </HeroTitle>
-                                <HeroLink to="sell">купить</HeroLink>
+                                <HeroLink to="/course-single">купить</HeroLink>
                             </HeroTitleBox>
 
                             <HeroInfoBox>
@@ -79,7 +79,7 @@ export const Hero = () => {
                                 <HeroTitle>
                                     Учебный центр <HeroTitleRedText>Виноградарства!</HeroTitleRedText>
                                 </HeroTitle>
-                                <HeroLink to="sell">купить</HeroLink>
+                                <HeroLink to="/course-single">купить</HeroLink>
                             </HeroTitleBox>
 
                             <HeroInfoBox>
