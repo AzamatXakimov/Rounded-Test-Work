@@ -93,7 +93,7 @@ export const FooterLink = styled(Link)`
 `;
 
 export const FooterPhoneLink = styled.a`
-    display: inline-flex;
+    display: flex;
     align-items: center;
     margin-bottom: 16px;
     font-family: 'Montserrat';

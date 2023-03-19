@@ -1,9 +1,9 @@
 import { CourseCardBottomBox, CourseCardDesc, CourseCardDescBox, CourseCardImg, CourseCardInfoBox, CourseCardItem, CourseCardLink, CourseCardLinkImg, CourseCardNumber, CourseCardTitle, CourseCardTitleBox } from "./CourseCard.styled"
 import cherryCourseImg from "../../assets/images/cherry-course-img.jpg";
-import courseArrow from "../../assets/images/arrow-to-right.svg"
+import courseArrow from "../../assets/images/arrow-to-right.svg";
 export const CourseCard = () => {
     return <>
-        <CourseCardItem>
+        <CourseCardItem data-aos="fade-up">
             <CourseCardImg src={cherryCourseImg}/>
             <CourseCardBottomBox>
                 <CourseCardInfoBox>

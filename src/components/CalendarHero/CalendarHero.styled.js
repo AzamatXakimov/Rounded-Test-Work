@@ -84,7 +84,7 @@ export const CalendarHeroDatePrevBtn = styled.button`
     cursor: pointer;
 `
 
-export const CalendarHeroDateText = styled.span`
+export const CalendarHeroDateText = styled.button`
     display: inline-block;
     margin-right: 23px;
     margin-left: 23px;
@@ -96,6 +96,9 @@ export const CalendarHeroDateText = styled.span`
     letter-spacing: -0.35px;
 
     color: #000;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 `
 
 export const CalendarHeroDateNextBtn = styled.button`
@@ -214,7 +217,7 @@ export const CalendarHeroItemText = styled.span`
 export const CalenderHeroFilterModal = styled.div`
     position: absolute;
     top: 0;
-    /* left: calc(50% - 620px);    */
+    /* left: calc(50% - 620px);*/
     left: 0;   
     display: none; 
     max-width: 415px;

@@ -34,11 +34,15 @@ export const HeaderLogoImg = styled.img`
 export const HeaderInnerBox = styled.div`
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    max-width: 820px;
+    width: 100%;
     margin-left: 20px;
 `;
 
 export const SearchButton = styled.button`
     display: inline-block;
+    flex-shrink: 0;
     width: 26px;
     height: 26px;
     margin-right: 36px;
@@ -149,6 +153,23 @@ export const HeaderNavSummary = styled.summary`
     }
 
 `;
+
+export const HeadereLangSelect = styled.select`
+    display: inline-block;
+    max-width: 80px;
+    width: 100%;
+    margin-right: 36px;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+`
+
+export const HeadereLangOption = styled.option`
+    color: #000;
+`
 
 
 

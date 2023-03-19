@@ -62,7 +62,7 @@ export const AboutUsSectionInfoDesc = styled.p`
 
 export const AboutUsSectionImg = styled.img`
     position: absolute;
-    bottom: 0;
+    bottom: -30px;
     left: calc(50% + 0px);
     z-index: 1;
     width: 684px;

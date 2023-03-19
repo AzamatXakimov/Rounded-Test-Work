@@ -1,262 +1,275 @@
 import { useState } from "react"
 import { CalendarHeroContainer, CalendarHeroDateBox, CalendarHeroDateNextBtn, CalendarHeroDatePrevBtn, CalendarHeroDateText, CalendarHeroFiltreButton, CalendarHeroItemBox, CalendarHeroItemBoxInner, CalendarHeroItemDateBox, CalendarHeroItemDateDay, CalendarHeroItemDateText, CalendarHeroItemDesc, CalendarHeroItemText, CalendarHeroItemTime, CalendarHeroSection, CalendarHeroTitle, CalendarHeroTopBox, CalendarHerpItem, CalendarHerpList, CalenderHeroFilterCheckBox, CalenderHeroFilterCheckBoxBox, CalenderHeroFilterCheckBoxText, CalenderHeroFilterForm, CalenderHeroFilterFromBtn, CalenderHeroFilterInput, CalenderHeroFilterInputLabel, CalenderHeroFilterLabel, CalenderHeroFilterModal, CalenderHeroFilterModalCloseBtn, CalenderHeroFilterText } from "./CalendarHero.styled"
+import { CustomCalendar } from "../Calendar/Calendar"
+import { useSelector } from "react-redux";
+import { language } from "../../Lang/Lang";
 
 export const CalendarHero = () => {
+    const {lang} = useSelector((state) => state);
 
-    const [filterModal, setFilterModal] = useState(false)
+    const [filterModal, setFilterModal] = useState(false);
+    const [calendar, setCalendar] = useState(false);
+    const [date, setDate] = useState("февраль, 2023")
 
     return <>
         <CalendarHeroSection>
             <CalendarHeroContainer>
                 <CalendarHeroTitle>
-                    Календарь
+                    {language[lang.lang]?.Main.calendar}
                 </CalendarHeroTitle>
-                <CalendarHeroTopBox>
-                    <CalendarHeroFiltreButton onClick={() => {
-                        setFilterModal(true)
-                    }}>
-                        фильтр
-                    </CalendarHeroFiltreButton>
 
-                    <CalendarHeroDateBox>
-                        <CalendarHeroDatePrevBtn type="button"/>
-                        <CalendarHeroDateText>
-                            февраль, 2023
-                        </CalendarHeroDateText>
-                        <CalendarHeroDateNextBtn type="button"/>
-                    </CalendarHeroDateBox>
-                </CalendarHeroTopBox>
+                {calendar ? <>
+                    <CustomCalendar setDate={setDate} setCalendar={setCalendar}/>
+                </> : <>
+                    <CalendarHeroTopBox>
+                        <CalendarHeroFiltreButton onClick={() => {
+                            setFilterModal(true)
+                        }}>
+                            {language[lang.lang]?.Main.filter}
+                        </CalendarHeroFiltreButton>
 
-                <CalendarHerpList>
-                    <CalendarHerpItem>
-                        <CalendarHeroItemDateBox>
-                            <CalendarHeroItemDateText>
-                                06
-                            </CalendarHeroItemDateText>
-                            <CalendarHeroItemDateDay>
-                                понедельник
-                            </CalendarHeroItemDateDay>
-                        </CalendarHeroItemDateBox>
+                        <CalendarHeroDateBox>
+                            <CalendarHeroDatePrevBtn type="button"/>
+                            <CalendarHeroDateText type="button" onClick={() => {
+                                setCalendar(true)
+                            }}>
+                                {date}
+                            </CalendarHeroDateText>
+                            <CalendarHeroDateNextBtn type="button"/>
+                        </CalendarHeroDateBox>
+                    </CalendarHeroTopBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
+                    <CalendarHerpList>
+                        <CalendarHerpItem>
+                            <CalendarHeroItemDateBox>
+                                <CalendarHeroItemDateText>
+                                    06
+                                </CalendarHeroItemDateText>
+                                <CalendarHeroItemDateDay>
+                                    понедельник
+                                </CalendarHeroItemDateDay>
+                            </CalendarHeroItemDateBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
-                    </CalendarHerpItem>
-                    <CalendarHerpItem className="red">
-                        <CalendarHeroItemDateBox>
-                            <CalendarHeroItemDateText>
-                                08
-                            </CalendarHeroItemDateText>
-                            <CalendarHeroItemDateDay>
-                                среда
-                            </CalendarHeroItemDateDay>
-                        </CalendarHeroItemDateBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
+                        </CalendarHerpItem>
+                        <CalendarHerpItem className="red">
+                            <CalendarHeroItemDateBox>
+                                <CalendarHeroItemDateText>
+                                    08
+                                </CalendarHeroItemDateText>
+                                <CalendarHeroItemDateDay>
+                                    среда
+                                </CalendarHeroItemDateDay>
+                            </CalendarHeroItemDateBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
-                    </CalendarHerpItem>
-                    <CalendarHerpItem>
-                        <CalendarHeroItemDateBox>
-                            <CalendarHeroItemDateText>
-                                06
-                            </CalendarHeroItemDateText>
-                            <CalendarHeroItemDateDay>
-                                понедельник
-                            </CalendarHeroItemDateDay>
-                        </CalendarHeroItemDateBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
+                        </CalendarHerpItem>
+                        <CalendarHerpItem>
+                            <CalendarHeroItemDateBox>
+                                <CalendarHeroItemDateText>
+                                    06
+                                </CalendarHeroItemDateText>
+                                <CalendarHeroItemDateDay>
+                                    понедельник
+                                </CalendarHeroItemDateDay>
+                            </CalendarHeroItemDateBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
-                    </CalendarHerpItem>
-                    <CalendarHerpItem className="red">
-                        <CalendarHeroItemDateBox>
-                            <CalendarHeroItemDateText>
-                                08
-                            </CalendarHeroItemDateText>
-                            <CalendarHeroItemDateDay>
-                                среда
-                            </CalendarHeroItemDateDay>
-                        </CalendarHeroItemDateBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
+                        </CalendarHerpItem>
+                        <CalendarHerpItem className="red">
+                            <CalendarHeroItemDateBox>
+                                <CalendarHeroItemDateText>
+                                    08
+                                </CalendarHeroItemDateText>
+                                <CalendarHeroItemDateDay>
+                                    среда
+                                </CalendarHeroItemDateDay>
+                            </CalendarHeroItemDateBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
-                    </CalendarHerpItem>
-                    <CalendarHerpItem>
-                        <CalendarHeroItemDateBox>
-                            <CalendarHeroItemDateText>
-                                06
-                            </CalendarHeroItemDateText>
-                            <CalendarHeroItemDateDay>
-                                понедельник
-                            </CalendarHeroItemDateDay>
-                        </CalendarHeroItemDateBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
+                        </CalendarHerpItem>
+                        <CalendarHerpItem>
+                            <CalendarHeroItemDateBox>
+                                <CalendarHeroItemDateText>
+                                    06
+                                </CalendarHeroItemDateText>
+                                <CalendarHeroItemDateDay>
+                                    понедельник
+                                </CalendarHeroItemDateDay>
+                            </CalendarHeroItemDateBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
-                    </CalendarHerpItem>
-                    <CalendarHerpItem className="red">
-                        <CalendarHeroItemDateBox>
-                            <CalendarHeroItemDateText>
-                                08
-                            </CalendarHeroItemDateText>
-                            <CalendarHeroItemDateDay>
-                                среда
-                            </CalendarHeroItemDateDay>
-                        </CalendarHeroItemDateBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
+                        </CalendarHerpItem>
+                        <CalendarHerpItem className="red">
+                            <CalendarHeroItemDateBox>
+                                <CalendarHeroItemDateText>
+                                    08
+                                </CalendarHeroItemDateText>
+                                <CalendarHeroItemDateDay>
+                                    среда
+                                </CalendarHeroItemDateDay>
+                            </CalendarHeroItemDateBox>
 
-                        <CalendarHeroItemBox>
-                            <CalendarHeroItemBoxInner>
-                                <CalendarHeroItemTime>
-                                    12:00
-                                </CalendarHeroItemTime>
-                                <CalendarHeroItemDesc>
-                                    Corem ipsum dolor 
-                                </CalendarHeroItemDesc>
-                                <CalendarHeroItemText>
-                                    Porem ipsum dolor 
-                                </CalendarHeroItemText>
-                            </CalendarHeroItemBoxInner>
-                        </CalendarHeroItemBox>
-                    </CalendarHerpItem>
-                </CalendarHerpList>
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
+
+                            <CalendarHeroItemBox>
+                                <CalendarHeroItemBoxInner>
+                                    <CalendarHeroItemTime>
+                                        12:00
+                                    </CalendarHeroItemTime>
+                                    <CalendarHeroItemDesc>
+                                        Corem ipsum dolor 
+                                    </CalendarHeroItemDesc>
+                                    <CalendarHeroItemText>
+                                        Porem ipsum dolor 
+                                    </CalendarHeroItemText>
+                                </CalendarHeroItemBoxInner>
+                            </CalendarHeroItemBox>
+                        </CalendarHerpItem>
+                    </CalendarHerpList>
+                </>}
             </CalendarHeroContainer>
 
             <CalenderHeroFilterModal className={filterModal ? "show" : ""}>

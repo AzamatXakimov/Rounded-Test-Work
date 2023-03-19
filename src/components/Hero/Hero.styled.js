@@ -78,7 +78,7 @@ export const HeroTitleRedText = styled.span`
 
 export const HeroLink = styled(Link)`
     display: inline-block;
-    max-width: 160px;
+    max-width: 182px;
     width: 100%;
     padding: 22px;
     font-family: 'Montserrat';

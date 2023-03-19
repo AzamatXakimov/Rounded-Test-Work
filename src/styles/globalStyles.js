@@ -14,6 +14,8 @@ import nextArt600W2 from "../assets/fonts/next-art-600.woff2";
 import nextArt600W from "../assets/fonts/next-art-600.woff";
 import nextArt700W2 from "../assets/fonts/next-art-700.woff2";
 import nextArt700W from "../assets/fonts/next-art-700.woff";
+import Roboto500W2 from "../assets/fonts/roboto-v30-latin-500.woff2";
+import Roboto500W from "../assets/fonts/roboto-v30-latin-500.woff";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -47,6 +49,14 @@ const GlobalStyles = createGlobalStyle`
         font-weight: 500;
         src: url(${montserrat500W2}) format('woff2'), 
             url(${montserrat500W}) format('woff'); 
+    }
+    @font-face {
+        font-display: swap; 
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: url(${Roboto500W2}) format('woff2'), 
+            url(${Roboto500W}) format('woff');
     }
     @font-face {
         font-display: swap;

@@ -3,7 +3,7 @@ import cherryCourseImg from "../../assets/images/cherry-course-img.jpg";
 import courseArrow from "../../assets/images/arrow-to-right.svg"
 export const AllCourseCard = () => {
     return <>
-        <AllCourseCardItem>
+        <AllCourseCardItem data-aos="flip-up" data-aos-anchor-placement="bottom-bottom">
             <AllCourseCardImg src={cherryCourseImg}/>
             <AllCourseCardBottomBox>
                 <AllCourseCardInfoBox>

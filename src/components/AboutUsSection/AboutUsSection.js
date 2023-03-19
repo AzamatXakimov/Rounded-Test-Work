@@ -1,23 +1,26 @@
 import { AboutUsSectionContainer, AboutUsSectionImg, AboutUsSectionInfoBox, AboutUsSectionInfoDesc, AboutUsSectionInfoTitle, AboutUsSectionTag, AboutUsSectionTitle } from "./AboutUsSection.styled";
 
 import AboutUsCherryImg from "../../assets/images/cherry-avout-us-img.jpg"
+import { useSelector } from "react-redux";
+import { language } from "../../Lang/Lang";
 
 export const AboutUsSection = () => {
+    const {lang} = useSelector((state) => state);
     return <>
         <AboutUsSectionTag>
             <AboutUsSectionContainer>
                 <AboutUsSectionTitle>
-                    О нас
+                    {language[lang.lang]?.Main.aboutUs}
                 </AboutUsSectionTitle>
-                <AboutUsSectionInfoBox>
+                <AboutUsSectionInfoBox data-aos="fade-right">
                     <AboutUsSectionInfoTitle>
-                        Учебный центр Виноградства
+                        {language[lang.lang]?.aboutUsSection.aboutUsTitle}
                     </AboutUsSectionInfoTitle>
                     <AboutUsSectionInfoDesc>
-                        Это уникальный образовательный проект, созданный для тех, кто хочет построить серьезную карьеру в винной индустрии, повысить свою квалификацию или просто получить базовые знания о вине, чтобы испытывать еще больше удовольствия от благородного напитка и самостоятельно выбирать хорошее в ресторане или супермаркете.
+                        {language[lang.lang]?.aboutUsSection.aboutUsDesc}
                     </AboutUsSectionInfoDesc>
                 </AboutUsSectionInfoBox>
-                <AboutUsSectionImg src={AboutUsCherryImg} alt="cherry image"/>
+                <AboutUsSectionImg src={AboutUsCherryImg} data-aos="fade-left" alt="cherry image" />
             </AboutUsSectionContainer>
         </AboutUsSectionTag>
     </>

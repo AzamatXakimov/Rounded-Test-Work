@@ -5,8 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { useSelector } from "react-redux";
+import { language } from "../../Lang/Lang";
 
 export const Hero = () => {
+    const {lang} = useSelector((state) => state);
     const pagination = {
         clickable: true,
         renderBullet: function (index, className) {
@@ -27,7 +30,7 @@ export const Hero = () => {
                                 <HeroTitle>
                                     Учебный центр <HeroTitleRedText>Виноградарства!</HeroTitleRedText>
                                 </HeroTitle>
-                                <HeroLink to="/course-single">купить</HeroLink>
+                                <HeroLink to="/course-single">{language[lang.lang]?.Main.buy}</HeroLink>
                             </HeroTitleBox>
 
                             <HeroInfoBox>
@@ -53,7 +56,7 @@ export const Hero = () => {
                                 <HeroTitle>
                                     Учебный центр <HeroTitleRedText>Виноградарства!</HeroTitleRedText>
                                 </HeroTitle>
-                                <HeroLink to="/course-single">купить</HeroLink>
+                                <HeroLink to="/course-single">{language[lang.lang]?.Main.buy}</HeroLink>
                             </HeroTitleBox>
 
                             <HeroInfoBox>
@@ -79,7 +82,9 @@ export const Hero = () => {
                                 <HeroTitle>
                                     Учебный центр <HeroTitleRedText>Виноградарства!</HeroTitleRedText>
                                 </HeroTitle>
-                                <HeroLink to="/course-single">купить</HeroLink>
+                                <HeroLink to="/course-single">
+                                    {language[lang.lang]?.Main.buy}
+                                </HeroLink>
                             </HeroTitleBox>
 
                             <HeroInfoBox>

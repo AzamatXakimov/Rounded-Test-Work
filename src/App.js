@@ -8,8 +8,13 @@ import { Courses } from "./pages/Courses/Courses"
 import { AboutUs } from "./pages/AboutUs/AboutUs"
 import { SingleCourse } from "./pages/SingleCourse/SingleCourse"
 import { Calendar } from "./pages/Calendar/Calendar"
-
+import Aos from "aos"
+import 'aos/dist/aos.css';
+import { useEffect } from "react"
 export const App = () => {
+    useEffect(() => {
+        Aos.init();
+    }, [])
     return <>
         <Header />
         <MainTag>

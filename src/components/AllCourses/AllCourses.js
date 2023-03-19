@@ -1,10 +1,12 @@
 import { Route, Routes, useNavigate } from "react-router-dom"
 import { AllCoursesContainer, AllCoursesList, AllCoursesNavItem, AllCoursesNavLink, AllCoursesNavList, AllCoursesSection, AllCoursesTitle } from "./AllCourses.styled";
-import { CourseCard } from "../CoruselCard/CourseCard";
 import { AllCourseCard } from "../AllCoruselCard/AllCourseCard";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { language } from "../../Lang/Lang";
 
 export const AllCourses = () => {
+    const {lang} = useSelector((state) => state);
     const navigate = useNavigate()
     useEffect(() => {
         navigate("popular")
@@ -15,7 +17,7 @@ export const AllCourses = () => {
         <AllCoursesSection>
             <AllCoursesContainer>
                 <AllCoursesTitle>
-                    все курсы
+                    {language[lang.lang]?.Main.allCourses}
                 </AllCoursesTitle>
                 <AllCoursesNavList>
                     <AllCoursesNavItem>

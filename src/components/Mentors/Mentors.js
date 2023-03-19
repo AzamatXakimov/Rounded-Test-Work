@@ -12,14 +12,17 @@ import Mentor2 from "../../assets/images/mentor-2.jpg";
 import Mentor3 from "../../assets/images/mentor-3.jpg";
 import Mentor4 from "../../assets/images/mentor-4.jpg";
 import Mentor5 from "../../assets/images/mentor-5.jpg";
+import { useSelector } from "react-redux";
+import { language } from "../../Lang/Lang";
 
 export const Mentors = () => {
+    const {lang} = useSelector((state) => state);
     return <>
         <MentorsSection>
             <MentorsContainer>
                 <MentorsInner>
                     <MentorsTitle>
-                        Наставники
+                        {language[lang.lang]?.Main.mentors}
                     </MentorsTitle>
 
                     <Swiper
@@ -47,17 +50,17 @@ export const Mentors = () => {
 
                     <MentorsInfoBox>
                         <MentorsText>
-                            Курс "Производство столового винограда"
+                            {language[lang.lang]?.mentorsSection.mentorsTitle}
                         </MentorsText>
                         <MentorsDescBox>
                             <MentorsDesc>
-                                Современная программа обучения и постоянная поддержка экспертов-преподавателей позволит вам продуктивно и быстро освоить данную сферу.
+                                {language[lang.lang]?.mentorsSection.mentorsDesc}
                             </MentorsDesc>
                         </MentorsDescBox>
 
-                        <MentorsTextBox>
+                        <MentorsTextBox data-aos="fade-up-left" data-aos-anchor-placement="bottom-bottom">
                             <MentorsTextBoxDesc>
-                                Составленвиноградарями и виноделами с опытом работы в Узбекистане, России и Франции.
+                                {language[lang.lang]?.mentorsSection.mentorsText}
                             </MentorsTextBoxDesc>
                         </MentorsTextBox>
                     </MentorsInfoBox>

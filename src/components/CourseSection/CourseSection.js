@@ -1,17 +1,20 @@
+import { useSelector } from "react-redux";
 import { CourseCard } from "../CoruselCard/CourseCard"
 import { CoruselContainer, CoruselSectionTag, CoruselTitle, CourseLink, CourselList } from "./CourseSection.styled";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import { language } from "../../Lang/Lang";
+// import { Pagination } from "swiper";
 
 export const CourseSection = () => {
+    const {lang} = useSelector((state) => state);
     return <>
         <CoruselSectionTag>
             <CoruselContainer>
                 <CoruselTitle>
-                    курсы
+                    {language[lang.lang]?.Main.courses}
                 </CoruselTitle>
 
                 {/* <Swiper
@@ -48,7 +51,7 @@ export const CourseSection = () => {
                 </CourselList>
 
                 <CourseLink to="courses">
-                    Смотреть все
+                    {language[lang.lang]?.Main.viewAll}
                 </CourseLink>
             </CoruselContainer>
         </CoruselSectionTag>
