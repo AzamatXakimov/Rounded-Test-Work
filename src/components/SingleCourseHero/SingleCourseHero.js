@@ -3,6 +3,7 @@ import { BuyModal } from "../BuyModal/BuyModal"
 import { SingleCourseHeroContainer, SingleCourseHeroIfoTitle, SingleCourseHeroInfoBox, SingleCourseHeroInfoBoxInner, SingleCourseHeroInfoButton, SingleCourseHeroInfoDesc, SingleCourseHeroInfoPrice, SingleCourseHeroInfoText, SingleCourseHeroSection } from "./SingleCourseHero.styled"
 
 export const SingleCourseHero = () => {
+    // const {} =  useParams();
 
     const [buyModal, setBuyModal] = useState(false)
     return <>
